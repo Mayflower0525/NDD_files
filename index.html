@@ -1,10 +1,43 @@
-<h1>Map Comparison by Planning Area</h1>
+<!-- <h1>Map Comparison by Planning Area</h1>
 <div style="display: flex; flex-wrap: wrap;">
   <iframe src="dm_patients_map.html" width="48%" height="400"></iframe>
   <iframe src="cvd_deaths_map.html" width="48%" height="400"></iframe>
   <iframe src="dm_visits_map.html" width="48%" height="400"></iframe>
   <iframe src="nsc_participation_map.html" width="48%" height="400"></iframe>
+</div> -->
+
+
+<h1>Map Comparison by Planning Area</h1>
+
+<style>
+  .map-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* space between maps */
+  }
+
+  .map-container iframe {
+    flex: 1 1 48%;      /* flex-grow, flex-shrink, flex-basis */
+    min-width: 300px;   /* prevent being too small on small screens */
+    aspect-ratio: 16/9; /* keeps maps proportional */
+    height: auto;       /* height auto so it scales */
+    border: none;       /* optional: remove iframe border */
+  }
+
+  @media (max-width: 768px) {
+    .map-container iframe {
+      flex: 1 1 100%; /* stack maps vertically on small screens */
+    }
+  }
+</style>
+
+<div class="map-container">
+  <iframe src="dm_patients_map.html"></iframe>
+  <iframe src="cvd_deaths_map.html"></iframe>
+  <iframe src="dm_visits_map.html"></iframe>
+  <iframe src="nsc_participation_map.html"></iframe>
 </div>
+
 
 
 
